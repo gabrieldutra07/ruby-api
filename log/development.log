@@ -112,3 +112,177 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 26ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 6101)
 
 
+  [1m[36mBook Load (2.0ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY `books`.`id` ASC LIMIT 1[0m
+Started GET "/authors" for 127.0.0.1 at 2024-05-29 14:25:36 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (1.9ms)[0m  [1m[34mSELECT `authors`.* FROM `authors`[0m
+  ↳ app/controllers/authors_controller.rb:8:in `index'
+Completed 200 OK in 44ms (Views: 9.1ms | ActiveRecord: 22.5ms | Allocations: 19600)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-05-29 14:25:36 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/authors/1" for 127.0.0.1 at 2024-05-29 14:25:44 -0300
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuthor Load (3.6ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/authors_controller.rb:44:in `set_author'
+Completed 200 OK in 39ms (Views: 1.5ms | ActiveRecord: 3.6ms | Allocations: 2339)
+
+
+Started GET "/authors" for 127.0.0.1 at 2024-05-29 14:26:00 -0300
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.8ms)[0m  [1m[34mSELECT `authors`.* FROM `authors`[0m
+  ↳ app/controllers/authors_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.8ms | Allocations: 818)
+
+
+Started GET "/books" for 127.0.0.1 at 2024-05-29 14:26:07 -0300
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (6.9ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+Completed 200 OK in 57ms (Views: 17.1ms | ActiveRecord: 30.2ms | Allocations: 10666)
+
+
+Started GET "/authors" for 127.0.0.1 at 2024-05-29 14:32:48 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.9ms)[0m  [1m[34mSELECT `authors`.* FROM `authors`[0m
+  ↳ app/controllers/authors_controller.rb:8:in `index'
+Completed 200 OK in 32ms (Views: 7.7ms | ActiveRecord: 12.2ms | Allocations: 19574)
+
+
+Started GET "/authors/1/books" for 127.0.0.1 at 2024-05-29 14:32:51 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"author_id"=>"1"}
+  [1m[36mBook Load (2.0ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+Completed 200 OK in 50ms (Views: 26.9ms | ActiveRecord: 10.6ms | Allocations: 10623)
+
+
+Started GET "/authors/2/books" for 127.0.0.1 at 2024-05-29 14:33:02 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"author_id"=>"2"}
+  [1m[36mBook Load (3.1ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  ↳ app/controllers/books_controller.rb:8:in `index'
+Completed 200 OK in 23ms (Views: 16.8ms | ActiveRecord: 3.0ms | Allocations: 881)
+
+
+Started GET "/authors/2/books" for 127.0.0.1 at 2024-05-29 14:38:24 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"author_id"=>"2"}
+  [1m[36mBook Load (1.5ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`author_id` = 2[0m
+  ↳ app/controllers/books_controller.rb:12:in `index'
+Completed 200 OK in 64ms (Views: 9.8ms | ActiveRecord: 37.8ms | Allocations: 3378)
+
+
+Started GET "/authors/1/books" for 127.0.0.1 at 2024-05-29 14:38:27 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"author_id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`author_id` = 1[0m
+  ↳ app/controllers/books_controller.rb:12:in `index'
+Completed 200 OK in 9ms (Views: 3.5ms | ActiveRecord: 5.0ms | Allocations: 4022)
+
+
+Started GET "/authors/1/books" for 127.0.0.1 at 2024-05-29 14:40:43 -0300
+Processing by BooksController#index as HTML
+  Parameters: {"author_id"=>"1"}
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`author_id` = 1[0m
+  ↳ app/controllers/books_controller.rb:12:in `index'
+Completed 200 OK in 39ms (Views: 3.1ms | ActiveRecord: 33.6ms | Allocations: 6109)
+
+
+Started GET "/authors/1/teste" for 127.0.0.1 at 2024-05-29 14:40:47 -0300
+Processing by BooksController#teste as HTML
+  Parameters: {"author_id"=>"1"}
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started GET "/authors/1/teste" for 127.0.0.1 at 2024-05-29 14:40:49 -0300
+Processing by BooksController#teste as HTML
+  Parameters: {"author_id"=>"1"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 65)
+
+
+Started GET "/authors/teste" for 127.0.0.1 at 2024-05-29 14:40:51 -0300
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"teste"}
+  [1m[36mAuthor Load (1.7ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`id` = NULL LIMIT 1[0m
+  ↳ app/controllers/authors_controller.rb:44:in `set_author'
+Completed 404 Not Found in 12ms (ActiveRecord: 5.6ms | Allocations: 2415)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Author with 'id'=teste):
+  
+app/controllers/authors_controller.rb:44:in `set_author'
+Started GET "/teste" for 127.0.0.1 at 2024-05-29 14:41:01 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/teste"):
+  
+Started GET "/teste" for 127.0.0.1 at 2024-05-29 14:41:21 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/teste"):
+  
+Started GET "/teste" for 127.0.0.1 at 2024-05-29 14:41:23 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/teste"):
+  
+Started GET "/author/teste" for 127.0.0.1 at 2024-05-29 14:41:57 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/author/teste"):
+  
+Started GET "/author/2/teste" for 127.0.0.1 at 2024-05-29 14:42:00 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/author/2/teste"):
+  
+Started GET "/authors/2/teste" for 127.0.0.1 at 2024-05-29 14:42:12 -0300
+Processing by BooksController#teste as HTML
+  Parameters: {"author_id"=>"2"}
+  [1m[36mBook Load (2.4ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`name` = 'Livro 1'[0m
+  ↳ app/controllers/books_controller.rb:18:in `teste'
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 15.7ms | Allocations: 3119)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'books.name' in 'where clause'):
+  
+Started GET "/authors/2/teste" for 127.0.0.1 at 2024-05-29 14:42:25 -0300
+Processing by BooksController#teste as HTML
+  Parameters: {"author_id"=>"2"}
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`title` = 'Livro 1'[0m
+  ↳ app/controllers/books_controller.rb:18:in `teste'
+Completed 200 OK in 14ms (Views: 2.8ms | ActiveRecord: 8.9ms | Allocations: 6157)
+
+
+Started GET "/authors/teste" for 127.0.0.1 at 2024-05-29 14:42:29 -0300
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"teste"}
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`id` = NULL LIMIT 1[0m
+  ↳ app/controllers/authors_controller.rb:44:in `set_author'
+Completed 404 Not Found in 8ms (ActiveRecord: 3.4ms | Allocations: 2292)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Author with 'id'=teste):
+  
+app/controllers/authors_controller.rb:44:in `set_author'
+Started GET "/teste/teste" for 127.0.0.1 at 2024-05-29 14:43:15 -0300
+  
+ActionController::RoutingError (uninitialized constant TesteController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/rails/info/routes?query=teste" for 127.0.0.1 at 2024-05-29 14:43:22 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"query"=>"teste"}
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 12259)
+
+
